@@ -46,9 +46,9 @@ class TaskController extends Controller
           ->where('title', 'LIKE', "%{$request->title}%")
           ->orderBy('is_complete')
           ->orderByDesc('created_at')
-          ->paginate(5);
+          ->get();
 
-      return view('tasks', [
+      return view('tasks.search', [
           'tasks' => $tasks,
           'title' => $request->title,
       ]);
