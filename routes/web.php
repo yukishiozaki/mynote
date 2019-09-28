@@ -28,6 +28,10 @@ Route::middleware(['auth'])->group(function() {
     Route::post('stores/create', 'StoreController@create')->name('store.create');
     Route::get('categories/add', 'CategoriesController@add')->name('category.add');
     Route::post('categories/create', 'CategoriesController@create')->name('category.create');
+
+    Route::get('notes/add', 'NotesController@add')->name('notes.add');
+    Route::post('notes/create', 'NotesController@create')->name('notes.create');
+
 });
 
 Route::get('stores/index', 'StoreController@index')->name('store.list');
