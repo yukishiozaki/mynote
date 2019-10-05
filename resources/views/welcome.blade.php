@@ -68,15 +68,15 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/tasks') }}">ToDo一覧</a>
+                        <a href="{{ url('/tasks') }}">create mynote🖋</a>
                     @else
-                        <a href="{{ route('login') }}">ログイン</a>
+                        <a href="{{ route('login') }}">(編集予定)ログイン</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">新規登録</a>
+                            <a href="{{ route('register') }}">(編集予定)新規登録</a>
                         @endif
                     @endauth
-                    <a href="{{ route('store.list') }}">お店一覧</a>
+                    <a href="{{ route('store.list') }}">(編集予定)お店一覧</a>
                 </div>
             @endif
 

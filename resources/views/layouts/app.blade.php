@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', '飯.com') }}</title>
+    <title>{{ config('app.name', 'mynote') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', '飯.com') }}
+                    {{ config('app.name', 'mynote') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -55,7 +55,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-right" href="{{ route('store.list') }}">
-                                    お店一覧
+                                    (編集予定)お店一覧
                                 </a>
                             </li>
                         @else
@@ -72,17 +72,17 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-right" href="{{ route('store.list') }}">
-                                    お店一覧
+                                    (編集予定)お店一覧
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-right" href="{{ route('store.add') }}">
-                                    お店追加
+                                    (編集予定)お店追加
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-right" href="{{ route('tasks.index') }}">
-                                    ToDo一覧
+                                    (編集予定)ToDo一覧
                                 </a>
                             </li>
                         @endguest

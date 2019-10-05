@@ -11,14 +11,13 @@ class NotesController extends Controller
 
   public function add()
   {
-
       return view('notes.add');
   }
 
   public function create(Request $request)
   {
 
-      return redirect('/stores/index');
+      return redirect('notes/add');
   }
 
 }
