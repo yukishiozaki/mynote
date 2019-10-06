@@ -13,6 +13,7 @@ class NotesController extends Controller
   public function add()
   {
       $colors = Color::all();
+
       return view('notes.add', compact('colors'));
       //return view('notes.add');
 
