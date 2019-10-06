@@ -10,12 +10,12 @@
                     </div>
                 @endif
                 <div class="card card-new-task">
-                    <div class="card-header">Note作成</div>
+                    <div class="card-header">Create note</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('notes.create') }}">
                             @csrf
                             <div class="form-group">
-                                <label for="contents">内容</label>
+                                <label for="contents">write it down</label>
                                 <input id="contents" name="contents" type="text" maxlength="255" class="form-control{{ $errors->has('contents') ? ' is-invalid' : '' }}" autocomplete="off" />
                                 @if ($errors->has('contents'))
                                     <span class="invalid-feedback" role="alert">
@@ -23,7 +23,16 @@
                                 </span>
                                 @endif
                             </div>
-                            <button type="submit" class="btn btn-primary">登録</button>
+
+                            <div class="form-group">
+                                <label for="color_id">color</label>
+                                <select id="color_id" class="form-control" name="color_id">
+                                    @foreach($colors as $color)
+                                      <option value="{{ $color->id }}">{{ $color->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">create</button>
                         </form>
                     </div>
                 </div>

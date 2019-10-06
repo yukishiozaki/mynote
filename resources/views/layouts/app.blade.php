@@ -63,7 +63,7 @@
                               <a class="nav-link text-right" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
-                                  ログアウト
+                                  log out
                               </a>
 
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -71,8 +71,8 @@
                               </form>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-right" href="{{ route('store.list') }}">
-                                    (編集予定)お店一覧
+                                <a class="nav-link text-right" href="{{ route('notes.list') }}">
+                                    Notes list
                                 </a>
                             </li>
                             <li class="nav-item">

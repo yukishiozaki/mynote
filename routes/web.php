@@ -36,3 +36,5 @@ Route::middleware(['auth'])->group(function() {
 
 Route::get('stores/index', 'StoreController@index')->name('store.list');
 Route::get('stores/show', 'StoreController@show')->name('store.show');
+
+Route::get('notes/index', 'NotesController@index')->name('notes.list');
