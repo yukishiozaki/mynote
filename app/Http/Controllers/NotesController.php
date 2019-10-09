@@ -23,8 +23,22 @@ class NotesController extends Controller
 
   public function create(Request $request)
   {
+      $this->validate($request, Note::$rules);
 
-      return redirect('notes/add');
+      $notes = new Note;
+      $form = $request->all();
+
+      // フォームから送信されてきた_tokenを削除する
+      unset($form['_token']);
+
+      // データベースに保存する
+      $notes->fill($form);
+      $notes->user_id = Auth::user()->id;
+      $notes->save();
+
+      return redirect('/notes/index');
+
+      //return redirect('notes/add');
   }
 
   public function index()
