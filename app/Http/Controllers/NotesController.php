@@ -23,10 +23,13 @@ class NotesController extends Controller
 
   public function create(Request $request)
   {
+
       $this->validate($request, Note::$rules);
 
       $notes = new Note;
+
       $form = $request->all();
+
 
       // フォームから送信されてきた_tokenを削除する
       unset($form['_token']);
@@ -43,8 +46,9 @@ class NotesController extends Controller
 
   public function index()
   {
-      //$notes = Note::all();
-      //return view('notes.list', ['notes' => $notes]);
+      $notes = Note::all();
+
+      return view('notes.list', ['notes' => $notes]);
       return view('notes.list');
   }
 

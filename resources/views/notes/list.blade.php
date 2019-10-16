@@ -9,11 +9,16 @@
       </div>
       <div class="row">
           @foreach ($notes as $note)
-            <div class="col-6 col-lg-4 pt-4">
-              <h4>{{ $note->note_name }}</h4>
-              <p>{{ $note->category->name }}</p>
-              <p><a class="btn btn-secondary" href="{{ route('note.show', ['id' => $note->id]) }}" role="button">詳細</a></p>
+
+            <div class="card col-6 col-lg-4 pt-4">
+              <div class="card-body">
+
+                <p class="card-text">{{ $note->contents }}</p>
+
+              </div>
             </div>
+
+
           @endforeach
      </div>
    </div>

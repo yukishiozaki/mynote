@@ -5,7 +5,7 @@
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-12">
       <div class="jumbotron">
-        <h1>(編集予定)お店一覧</h1>
+        <h1>お店一覧</h1>
       </div>
       <div class="row">
           @foreach ($stores as $store)

@@ -9,8 +9,7 @@ class Note extends Model
   protected $guarded = ['id'];
 
   public static $rules = array(
-      'store_name' => 'required',
-      'store_adres' => 'required',
+      'contents' => 'required',
 
     );
 }
