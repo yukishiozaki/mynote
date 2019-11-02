@@ -16,7 +16,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="store_name">color</label>
-                                <input id="name" name="name" type="text" maxlength="255" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" autocomplete="off" />
+                                <input id="name" name="name" type="text" maxlength="20" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" autocomplete="off" />
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('name') }}</strong>

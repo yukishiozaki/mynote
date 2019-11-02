@@ -111,5 +111,8 @@ return [
     */
     'attributes' => [
         'password' => 'パスワード',
+        'contents' => '内容',
+        'color_id' => '付箋の色',
+        'name' => '色'
     ],
 ];
