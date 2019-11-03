@@ -4,11 +4,6 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
                 <div class="card card-new-task">
                     <div class="card-header">Create note</div>
                     <div class="card-body">
@@ -16,7 +11,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="contents">write it down</label>
-                                <input id="contents" name="contents" type="text" maxlength="255" class="form-control{{ $errors->has('contents') ? ' is-invalid' : '' }}" autocomplete="off" />
+                                <textarea id="contents" name="contents" type="text" maxlength="255" class="form-control{{ $errors->has('contents') ? ' is-invalid' : '' }}" autocomplete="off" rows="5"></textarea>
                                 @if ($errors->has('contents'))
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('contents') }}</strong>
@@ -32,10 +27,20 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">create</button>
+                            <div class="text-right">
+                              <button type="submit" class="btn btn-primary">create</button>
+                            </div>
+
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection

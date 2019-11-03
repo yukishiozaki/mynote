@@ -12,3 +12,79 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.alert-success {
+  color: red;
+  background-color: transparent;
+  border-color: transparent;
+
+  hr {
+    border-top-color: #b3e8ca;
+  }
+
+  .alert-link {
+    color: #123c24;
+  }
+}
+
+.memo-area {
+  width: 100%;
+  border:none;
+  height: 100%;
+  resize: none;
+  background-color: transparent;
+}
+
+.cardbody-no-padding {
+  flex: 1 1 auto;
+  padding: 0.05rem;
+  height: 100%;
+}
+
+.doneEntry {
+    background-image: url(/image/action/normal.png);
+    background-position: -80px 0;
+}
+.actionButton {
+    cursor: pointer;
+    width: 20px;
+    height: 14px;
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.background-color-blue {
+    background-color: blue;
+}
+
+.background-color-red {
+    background-color: red;
+}
+
+.background-color-yellow {
+    background-color: yellow;
+}
+
+.background-color-green {
+    background-color: green;
+}
+
+.background-color-white {
+    background-color: white;
+}
+
+.container-90percent {
+  width: 90%;
+}
+
+.jumbotron-padding {
+  padding: 0.5rem 0.5rem;
+  background-color: transparent;
+}
+
+.card-border {
+  border: 2px solid white;
+  border-radius: 0.75rem;
+}

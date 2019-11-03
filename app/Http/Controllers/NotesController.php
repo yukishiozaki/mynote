@@ -39,7 +39,9 @@ class NotesController extends Controller
       $notes->user_id = Auth::user()->id;
       $notes->save();
 
-      return redirect('/notes/index');
+      session()->flash('status', '作成しました！');
+
+      return redirect('/notes/add');
 
       //return redirect('notes/add');
   }
@@ -49,7 +51,6 @@ class NotesController extends Controller
       $notes = Note::all();
 
       return view('notes.list', ['notes' => $notes]);
-      return view('notes.list');
   }
 
 

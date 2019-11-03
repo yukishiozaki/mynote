@@ -11,5 +11,11 @@ class Note extends Model
   public static $rules = array(
       'contents' => 'required',
       'color_id' => 'required',
-    );
+  );
+
+  public function color()
+  {
+      return $this->belongsTo('App\Models\Color');
+  }
+
 }
