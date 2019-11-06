@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('notes/add', 'NotesController@add')->name('notes.add');
     Route::post('notes/create', 'NotesController@create')->name('notes.create');
+    Route::get('notes/complete', 'NotesController@complete')->name('notes.complete');
 
     Route::get('colors/add', 'ColorsController@add')->name('color.add');
     Route::post('colors/create', 'ColorsController@create')->name('color.create');

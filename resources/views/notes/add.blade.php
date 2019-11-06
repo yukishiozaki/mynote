@@ -11,7 +11,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="contents">write it down</label>
-                                <textarea id="contents" name="contents" type="text" maxlength="255" class="form-control{{ $errors->has('contents') ? ' is-invalid' : '' }}" autocomplete="off" rows="5"></textarea>
+                                <textarea id="contents" name="contents" type="text" maxlength="250" class="form-control{{ $errors->has('contents') ? ' is-invalid' : '' }}" autocomplete="off" rows="5"></textarea>
                                 @if ($errors->has('contents'))
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('contents') }}</strong>

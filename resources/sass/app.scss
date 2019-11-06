@@ -33,6 +33,7 @@
   height: 100%;
   resize: none;
   background-color: transparent;
+  padding: 0.7em;
 }
 
 .cardbody-no-padding {
@@ -60,7 +61,7 @@
 }
 
 .background-color-red {
-    background-color: #F7819F;
+    background-color: #F6CEE3;
 }
 
 .background-color-yellow {
@@ -75,6 +76,10 @@
     background-color: #FFFFFF;
 }
 
+.background-color-purple {
+    background-color: #E3CEF6;
+}
+
 .container-90percent {
   width: 90%;
 }
@@ -85,6 +90,14 @@
 }
 
 .card-border {
-  border: 2px solid white;
+  border: 2px solid #f8fafc;
   border-radius: 0.75rem;
+}
+
+.h1-color {
+  color: #585858;
+}
+
+.fusen {
+  padding: 0;
 }

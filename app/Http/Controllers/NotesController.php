@@ -48,9 +48,19 @@ class NotesController extends Controller
 
   public function index()
   {
-      $notes = Note::all();
+
+      $notes = Note::all()->sortByDesc('updated_at');
 
       return view('notes.list', ['notes' => $notes]);
+  }
+
+  public function complete(Request $request)
+  {
+      $note = Note::find($request->id);
+      $note->is_complete = 1;
+      $note->save();
+
+      return redirect('/notes/list', ['notes' => $notes]);
   }
 
 
