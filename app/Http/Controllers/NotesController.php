@@ -54,6 +54,30 @@ class NotesController extends Controller
       return view('notes.list', ['notes' => $notes]);
   }
 
+  public function edit(Request $request)
+  {
+
+    $notes = $Note::find($request->id);
+    if (empty($notes)) {
+      abort(404);
+    }
+    return view('notes.edit', ['notes_form' => $notes]);
+  }
+
+  public function update(Request $request)
+  {
+
+    $this->validate($request, Note::$rules);
+
+    $note = Note::find($request->id);
+    $notes_form = $request->all();
+    unset($notes_form['_token']);
+
+    $note->fill($notes_form)->save();
+
+    return redirect('notes/');
+  }
+
   public function complete(Request $request)
   {
       $note = Note::find($request->id);

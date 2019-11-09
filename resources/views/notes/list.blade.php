@@ -8,15 +8,23 @@
         <h1 class="h1-color">Notes List</h1>
       </div>
       <div class="row">
+          <div class="col-md-4">
+              <a href="{{ action('NotesController@add') }}" role="button" class="btn btn-primary">CREATE NOTE</a>
+          </div>
+      </div>
+      <div class="row">
           @foreach ($notes as $note)
 
             <div class="card card-border col-6 col-lg-3 fusen background-color-{{ $note->color->name }} ">
               <div class="cardbody-no-padding">
 
                 <textarea class="memo-area" rows="5">{{ $note->contents }}</textarea>
-                <div class="actionButton doneEntry nodrag" title="はがす">
-                  <a href="{{ action('NotesController@complete', ['is_complete' => $notes->is_complete]) }}"></a>
 
+                  <div>
+                      <a href="{{ action('NotesController@edit', ['id' => $note->id]) }}">
+                      <div class="actionButton doneEntry nodrag" title="はがす">
+                      </div>
+                      </a>
                 </div>
 
 
