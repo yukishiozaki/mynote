@@ -30,10 +30,9 @@ Route::middleware(['auth'])->group(function() {
     Route::post('categories/create', 'CategoriesController@create')->name('category.create');
 
     Route::get('notes/add', 'NotesController@add')->name('notes.add');
-    Route::post('notes/create', 'NotesController@create')->name('notes.create');
     Route::get('notes/complete', 'NotesController@complete')->name('notes.complete');
     Route::get('notes/edit', 'NotesController@edit')->name('notes.edit');
-    Route::post('notes/edit', 'NotesController@update')->name('notes.edit');
+    Route::post('notes/edit', 'NotesController@update')->name('notes.update');
     Route::get('notes/delete', 'NotesController@delete')->name('notes.delete');
 
     Route::get('colors/add', 'ColorsController@add')->name('color.add');
@@ -45,3 +44,6 @@ Route::get('stores/index', 'StoreController@index')->name('store.list');
 Route::get('stores/show', 'StoreController@show')->name('store.show');
 
 Route::get('notes/index', 'NotesController@index')->name('notes.list');
+Route::get('notes/completelist', 'NotesController@completeList')->name('notes.list');
+
+Route::post('notes/create', 'NotesController@create')->name('notes.create');

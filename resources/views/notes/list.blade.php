@@ -14,28 +14,41 @@
       </div>
       <div class="row">
           @foreach ($notes as $note)
-
             <div class="card card-border col-6 col-lg-3 fusen background-color-{{ $note->color->name }} ">
               <div class="cardbody-no-padding">
+                <form action="{{ action('NotesController@update') }}" method="post" enctype="multipart/form-data">
+                  <textarea class="memo-area" rows="5" onchange="testtest();">{{ $note->contents }}</textarea>
+                </form>
 
-                <textarea class="memo-area" rows="5">{{ $note->contents }}</textarea>
-
-                  <div>
-                      <a href="{{ action('NotesController@edit', ['id' => $note->id]) }}">
-                      <div class="actionButton doneEntry nodrag" title="はがす">
-                      </div>
-                      </a>
+                <div>
+                  <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" onclick='return confirm("君は本当に削除するつもりかい？");' >
+                    <div class="actionButton doneEntry nodrag" title="はがす?">
+                    </div>
+                  </a>
                 </div>
-
-
-
               </div>
             </div>
-
-
           @endforeach
-     </div>
-   </div>
+      </div>
+    </div>
   </div>
 </div>
+<script>
+  function testtest(){
+    console.log('aaaaa');
+    $.post('/notes/edit',
+    {
+         '_token': $('meta[name=csrf-token]').attr('content')
+    }).error(
+      function (data) {
+        console.log("error");
+      }
+    )
+    .success(
+      function (data) {
+        console.log("success");
+      }
+    );
+  }
+</script>
 @endsection

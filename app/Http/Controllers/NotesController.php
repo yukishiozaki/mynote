@@ -7,6 +7,7 @@ use App\Models\Color;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class NotesController extends Controller
 {
 
@@ -49,7 +50,16 @@ class NotesController extends Controller
   public function index()
   {
 
-      $notes = Note::all()->sortByDesc('updated_at');
+      // $notes = Note::all()->sortByDesc('updated_at');
+      $notes = Note::where('is_complete', 0)->get()->sortByDesc('updated_at');
+
+      return view('notes.list', ['notes' => $notes]);
+  }
+
+  public function completeList()
+  {
+      $one = 1;
+      $notes = Note::where('is_complete', $one)->get()->sortByDesc('updated_at');
 
       return view('notes.list', ['notes' => $notes]);
   }
@@ -57,7 +67,7 @@ class NotesController extends Controller
   public function edit(Request $request)
   {
 
-    $notes = $Note::find($request->id);
+    $notes = Note::find($request->id);
     if (empty($notes)) {
       abort(404);
     }
@@ -66,6 +76,8 @@ class NotesController extends Controller
 
   public function update(Request $request)
   {
+
+    dd($request);
 
     $this->validate($request, Note::$rules);
 
@@ -84,8 +96,10 @@ class NotesController extends Controller
       $note->is_complete = 1;
       $note->save();
 
-      return redirect('/notes/list', ['notes' => $notes]);
+      return redirect('notes/index');
   }
+
+
 
 
 }
