@@ -44,6 +44,6 @@ Route::get('stores/index', 'StoreController@index')->name('store.list');
 Route::get('stores/show', 'StoreController@show')->name('store.show');
 
 Route::get('notes/index', 'NotesController@index')->name('notes.list');
-Route::get('notes/completelist', 'NotesController@completeList')->name('notes.list');
+Route::get('notes/completelist', 'NotesController@completeList')->name('notes.completelist');
 
 Route::post('notes/create', 'NotesController@create')->name('notes.create');

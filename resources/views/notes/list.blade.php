@@ -5,19 +5,18 @@
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-12">
       <div class="jumbotron jumbotron-padding">
-        <h1 class="h1-color">Notes List</h1>
-      </div>
-      <div class="row">
-          <div class="col-md-4">
-              <a href="{{ action('NotesController@add') }}" role="button" class="btn btn-primary">CREATE NOTE</a>
-          </div>
+        @if ($notes[0]->is_complete == 0)
+          <h1 class="h1-color">Notes List</h1>
+        @else
+          <h1 class="h1-color">Complete List</h1>
+        @endif
       </div>
       <div class="row">
           @foreach ($notes as $note)
             <div class="card card-border col-6 col-lg-3 fusen background-color-{{ $note->color->name }} ">
               <div class="cardbody-no-padding">
                 <form action="{{ action('NotesController@update') }}" method="post" enctype="multipart/form-data">
-                  <textarea class="memo-area" rows="5" onchange="testtest();">{{ $note->contents }}</textarea>
+                  <textarea class="memo-area" rows="5">{{ $note->contents }}</textarea>
                 </form>
 
                 <div>
@@ -34,21 +33,11 @@
   </div>
 </div>
 <script>
-  function testtest(){
-    console.log('aaaaa');
-    $.post('/notes/edit',
-    {
-         '_token': $('meta[name=csrf-token]').attr('content')
-    }).error(
-      function (data) {
-        console.log("error");
-      }
-    )
-    .success(
-      function (data) {
-        console.log("success");
-      }
-    );
-  }
+  var memo_area = $(".memo_area");
+  console.log(memo_area);
+  memo_area.addEventListener('change', function() {
+    console.log("test");
+    this.form.submit();
+  },false);
 </script>
 @endsection

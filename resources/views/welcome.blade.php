@@ -69,14 +69,14 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/notes/add') }}">create mynote🖋</a>
+                        <a href="{{ url('/notes/index') }}">notes list</a>
                     @else
                         <a href="{{ route('login') }}">login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">(編集予定)新規登録</a>
+                            <a href="{{ route('register') }}">register</a>
                         @endif
                     @endauth
-                    <a href="{{ route('notes.list') }}">Notes list</a>
                 </div>
             @endif
 

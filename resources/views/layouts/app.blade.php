@@ -46,17 +46,12 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link text-right" href="{{ route('login') }}">ログイン</a>
+                                <a class="nav-link text-right" href="{{ route('login') }}">LOGIN</a>
                             </li>
                             <li class="nav-item">
                                 @if (Route::has('register'))
-                                    <a class="nav-link text-right" href="{{ route('register') }}">新規登録</a>
+                                    <a class="nav-link text-right" href="{{ route('register') }}">REGISTER</a>
                                 @endif
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-right" href="{{ route('store.list') }}">
-                                    (編集予定)お店一覧
-                                </a>
                             </li>
                         @else
                             <li class="nav-item">
@@ -71,20 +66,15 @@
                               </form>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link text-right" href="{{ route('notes.add') }}">
+                                    Create Note
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-right" href="{{ route('notes.list') }}">
                                     Notes list
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-right" href="{{ route('store.add') }}">
-                                    (編集予定)お店追加
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-right" href="{{ route('tasks.index') }}">
-                                    (編集予定)ToDo一覧
-                                </a>
-                            </li>
+                            </li>    
                         @endguest
                     </ul>
                 </div>

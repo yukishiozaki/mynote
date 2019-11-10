@@ -32,13 +32,19 @@ class NotesController extends Controller
       $form = $request->all();
 
 
+
       // フォームから送信されてきた_tokenを削除する
       unset($form['_token']);
 
       // データベースに保存する
       $notes->fill($form);
       $notes->user_id = Auth::user()->id;
+
+      $notes->is_complete = 0;
+
       $notes->save();
+
+
 
       session()->flash('status', '作成しました！');
 
@@ -98,8 +104,6 @@ class NotesController extends Controller
 
       return redirect('notes/index');
   }
-
-
 
 
 }
