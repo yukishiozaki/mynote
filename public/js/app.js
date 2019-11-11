@@ -1736,10 +1736,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['contents'],
-  mounted: function mounted() {
-    console.log('Component mounted inouchi.');
+  props: ['note_id', 'contents'],
+  methods: {
+    postMemo: function postMemo(event) {
+      var memo = {
+        'id': this.note_id,
+        'contents': event.target.value
+      };
+      axios.post('/notes/edit/', memo).then(function (res) {
+        console.log("memo edit done");
+      });
+    }
   }
 });
 
@@ -37086,21 +37095,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      attrs: {
-        action: "/notes/edit",
-        method: "post",
-        enctype: "multipart/form-data"
-      }
-    },
-    [
-      _c("textarea", { staticClass: "memo-area", attrs: { rows: "5" } }, [
-        _vm._v(_vm._s(_vm.contents))
-      ])
-    ]
-  )
+  return _c("form", [
+    _c("input", {
+      attrs: { type: "hidden", name: "note_id" },
+      domProps: { value: _vm.note_id }
+    }),
+    _vm._v(" "),
+    _c(
+      "textarea",
+      {
+        staticClass: "memo-area",
+        attrs: { rows: "5" },
+        on: { change: _vm.postMemo }
+      },
+      [_vm._v(_vm._s(_vm.contents))]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
