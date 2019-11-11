@@ -82,18 +82,11 @@ class NotesController extends Controller
 
   public function update(Request $request)
   {
-
-    dd($request);
-
-    $this->validate($request, Note::$rules);
-
     $note = Note::find($request->id);
     $notes_form = $request->all();
     unset($notes_form['_token']);
 
     $note->fill($notes_form)->save();
-
-    return redirect('notes/');
   }
 
   public function complete(Request $request)
