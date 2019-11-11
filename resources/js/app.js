@@ -22,6 +22,14 @@ Vue.component(
 	 require('./components/ExampleComponent.vue').default
 );
 
+Vue.component(
+	'memo-area-component',
+  require('./components/MemoAreaComponent.vue').default,
+  {
+    props: ['contents'],
+  }
+);
+
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {
