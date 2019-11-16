@@ -1,7 +1,7 @@
 <template>
   <form>
     <input type="hidden" name="note_id" :value="note_id">
-    <textarea class="memo-area" rows="5" v-on:change="postMemo">{{ contents }}</textarea>
+    <textarea class="memo-area" rows="5" v-on:change="postMemo" :value="contents"></textarea>
   </form>
 </template>
 

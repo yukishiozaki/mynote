@@ -4,7 +4,7 @@
 <div class="container-fluid container-90percent">
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-12">
-      <div class="jumbotron jumbotron-padding">
+      <div class="jumbotron jumbotron-style">
         @if ($notes[0]->is_complete == 0)
           <h1 class="h1-color">Notes List</h1>
         @else

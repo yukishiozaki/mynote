@@ -9,24 +9,24 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <div class="card card-new-task">
-                    <div class="card-header">color登録</div>
+                <div class="card card-new-color">
+                    <div class="card-header">color</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('color.create') }}">
                             @csrf
                             <div class="form-group">
-                                <label for="store_name">color</label>
                                 <input id="name" name="name" type="text" maxlength="20" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" autocomplete="off" />
                                 @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
+                                  <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('name') }}</strong>
-                                </span>
+                                  </span>
                                 @endif
                             </div>
-                            <button type="submit" class="btn btn-primary">登録</button>
+                            <button type="submit" class="btn btn-primary">register</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection

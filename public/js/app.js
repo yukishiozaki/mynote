@@ -37101,15 +37101,12 @@ var render = function() {
       domProps: { value: _vm.note_id }
     }),
     _vm._v(" "),
-    _c(
-      "textarea",
-      {
-        staticClass: "memo-area",
-        attrs: { rows: "5" },
-        on: { change: _vm.postMemo }
-      },
-      [_vm._v(_vm._s(_vm.contents))]
-    )
+    _c("textarea", {
+      staticClass: "memo-area",
+      attrs: { rows: "5" },
+      domProps: { value: _vm.contents },
+      on: { change: _vm.postMemo }
+    })
   ])
 }
 var staticRenderFns = []
@@ -49512,8 +49509,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /mnt/e/laravel_project/mynote/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /mnt/e/laravel_project/mynote/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/yuki/mynote/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/yuki/mynote/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
