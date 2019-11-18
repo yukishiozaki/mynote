@@ -1734,13 +1734,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['note_id', 'contents'],
+  props: ["note_id"],
+  data: function data() {
+    return {
+      contents: $("#note-" + this.note_id).val()
+    };
+  },
+  mounted: function mounted() {
+    console.log(this.note_id);
+  },
   methods: {
     postMemo: function postMemo(event) {
+      console.log(this.contents);
+      var contents = event.target.value.replace(/\r|\n|\r\n/g, ' ');
       var memo = {
         'id': this.note_id,
         'contents': event.target.value
@@ -37095,22 +37102,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", [
-    _c("input", {
-      attrs: { type: "hidden", name: "note_id" },
-      domProps: { value: _vm.note_id }
-    }),
-    _vm._v(" "),
-    _c(
-      "textarea",
+  return _c("textarea", {
+    directives: [
       {
-        staticClass: "memo-area",
-        attrs: { rows: "5" },
-        on: { change: _vm.postMemo }
-      },
-      [_vm._v(_vm._s(_vm.contents))]
-    )
-  ])
+        name: "model",
+        rawName: "v-model",
+        value: _vm.contents,
+        expression: "contents"
+      }
+    ],
+    staticClass: "memo-area",
+    attrs: { rows: "5" },
+    domProps: { value: _vm.contents },
+    on: {
+      change: _vm.postMemo,
+      input: function($event) {
+        if ($event.target.composing) {
+          return
+        }
+        _vm.contents = $event.target.value
+      }
+    }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49429,14 +49442,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************!*\
   !*** ./resources/js/components/MemoAreaComponent.vue ***!
   \*******************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MemoAreaComponent_vue_vue_type_template_id_075cd40a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MemoAreaComponent.vue?vue&type=template&id=075cd40a& */ "./resources/js/components/MemoAreaComponent.vue?vue&type=template&id=075cd40a&");
 /* harmony import */ var _MemoAreaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MemoAreaComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/MemoAreaComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _MemoAreaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _MemoAreaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -49466,7 +49480,7 @@ component.options.__file = "resources/js/components/MemoAreaComponent.vue"
 /*!********************************************************************************!*\
   !*** ./resources/js/components/MemoAreaComponent.vue?vue&type=script&lang=js& ***!
   \********************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

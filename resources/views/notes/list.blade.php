@@ -5,17 +5,20 @@
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-12">
       <div class="jumbotron jumbotron-padding">
-        @if ($notes[0]->is_complete == 0)
-          <h1 class="h1-color">Notes List</h1>
-        @else
+        @if (count($notes) > 0 && $notes[0]->is_complete == 1)
           <h1 class="h1-color">Complete List</h1>
+        @else
+          <h1 class="h1-color">Notes List</h1>
         @endif
       </div>
       <div class="row">
           @foreach ($notes as $note)
+            <textarea id="note-{{$note->id}}" style="display: none;">{{ $note->contents }}</textarea>
             <div class="card card-border col-6 col-lg-3 fusen background-color-{{ $note->color->name }} ">
               <div class="cardbody-no-padding">
-                <memo-area-component note_id={{ $note->id }} contents={{ $note->contents }}></memo-area-component>
+                <form>
+                  <memo-area-component note_id={{ $note->id }} contents="{{ $note->contents }}"></memo-area-component>
+                </form>
                 <div>
                   <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("君は本当に削除するつもりかい？");' >
                     <div class="actionButton doneEntry nodrag" title="はがす?">
