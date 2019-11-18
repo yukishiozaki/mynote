@@ -74,7 +74,7 @@
                                 <a class="nav-link text-right" href="{{ route('notes.list') }}">
                                     Notes list
                                 </a>
-                            </li>    
+                            </li>
                         @endguest
                     </ul>
                 </div>

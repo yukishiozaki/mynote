@@ -59,6 +59,8 @@ class NotesController extends Controller
       // $notes = Note::all()->sortByDesc('updated_at');
       $notes = Note::where('is_complete', 0)->get()->sortByDesc('updated_at');
 
+      //dd($notes);
+
       return view('notes.list', ['notes' => $notes]);
   }
 

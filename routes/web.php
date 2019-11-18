@@ -38,6 +38,9 @@ Route::middleware(['auth'])->group(function() {
     Route::get('colors/add', 'ColorsController@add')->name('color.add');
     Route::post('colors/create', 'ColorsController@create')->name('color.create');
 
+    Route::get('wallpapers/add', 'WallpapersController@add')->name('wallpaper.add');
+    Route::post('wallpapers/create', 'wallpapersController@create')->name('wallpaper.create');
+
 });
 
 Route::get('stores/index', 'StoreController@index')->name('store.list');

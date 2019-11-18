@@ -84,18 +84,19 @@
   width: 90%;
 }
 
-.jumbotron-padding {
+.jumbotron-style {
   padding: 0.5rem 0.5rem;
   background-color: transparent;
+  margin-bottom: 0.5rem;
 }
 
 .card-border {
-  border: 2px solid #f8fafc;
-  border-radius: 0.75rem;
+  border: 5px solid #f8fafc;
+  border-radius: 1.1rem;
 }
 
 .h1-color {
-  color: #585858;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .fusen {
