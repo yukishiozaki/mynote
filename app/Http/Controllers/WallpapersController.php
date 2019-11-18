@@ -1,24 +1,24 @@
 <?php
 namespace App\Http\Controllers;
-use App\Models\Color;
+use App\Models\Wallpaper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-class ColorsController extends Controller
+class WallpapersController extends Controller
 {
     public function add()
     {
-        return view('colors.add');
+        return view('wallpapers.add');
     }
     public function create(Request $request)
     {
-        $color = new Color;
+        $wallpaper = new Wallpaper;
         $form = $request->all();
         // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
         // データベースに保存する
-        $color->fill($form);
-        $color->save();
+        $wallpaper->fill($form);
+        $wallpaper->save();
 
-        return redirect('/stores/index');
+        return redirect('/notes/index');
     }
 }
