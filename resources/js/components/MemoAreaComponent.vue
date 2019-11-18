@@ -1,16 +1,23 @@
 <template>
-  <form>
-    <input type="hidden" name="note_id" :value="note_id">
-    <textarea class="memo-area" rows="5" v-on:change="postMemo" :value="contents"></textarea>
-  </form>
+  <textarea class="memo-area" rows="5" v-model="contents" v-on:change="postMemo"></textarea>
 </template>
 
 <script>
 
   export default {
-    props: ['note_id', 'contents'],
+    props: ["note_id"],
+    data: function() {
+        return {
+          contents: $("#note-" + this.note_id).val()
+        }
+    },
+    mounted: function () {
+      console.log(this.note_id);
+    },
     methods: {
       postMemo: function (event) {
+            console.log(this.contents);
+        var contents = event.target.value.replace(/\r|\n|\r\n/g, ' ')
         var memo = {
             'id': this.note_id,
             'contents': event.target.value

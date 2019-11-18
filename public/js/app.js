@@ -1734,13 +1734,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['note_id', 'contents'],
+  props: ["note_id"],
+  data: function data() {
+    return {
+      contents: $("#note-" + this.note_id).val()
+    };
+  },
+  mounted: function mounted() {
+    console.log(this.note_id);
+  },
   methods: {
     postMemo: function postMemo(event) {
+      console.log(this.contents);
+      var contents = event.target.value.replace(/\r|\n|\r\n/g, ' ');
       var memo = {
         'id': this.note_id,
         'contents': event.target.value
@@ -37095,19 +37102,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", [
-    _c("input", {
-      attrs: { type: "hidden", name: "note_id" },
-      domProps: { value: _vm.note_id }
-    }),
-    _vm._v(" "),
-    _c("textarea", {
-      staticClass: "memo-area",
-      attrs: { rows: "5" },
-      domProps: { value: _vm.contents },
-      on: { change: _vm.postMemo }
-    })
-  ])
+  return _c("textarea", {
+    directives: [
+      {
+        name: "model",
+        rawName: "v-model",
+        value: _vm.contents,
+        expression: "contents"
+      }
+    ],
+    staticClass: "memo-area",
+    attrs: { rows: "5" },
+    domProps: { value: _vm.contents },
+    on: {
+      change: _vm.postMemo,
+      input: function($event) {
+        if ($event.target.composing) {
+          return
+        }
+        _vm.contents = $event.target.value
+      }
+    }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49509,8 +49525,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/yuki/mynote/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/yuki/mynote/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /mnt/e/laravel_project/mynote/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /mnt/e/laravel_project/mynote/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
