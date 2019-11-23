@@ -19,6 +19,6 @@ class ColorsController extends Controller
         $color->fill($form);
         $color->save();
 
-        return redirect('/stores/index');
+        return redirect('/notes/index');
     }
 }
