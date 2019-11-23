@@ -14,7 +14,6 @@ class WallpapersController extends Controller
         $wallpaper = new Wallpaper;
         $form = $request->all();
 
-        dd($form);
 
         if ($form['image']) {
 
