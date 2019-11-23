@@ -4,19 +4,13 @@
 <div class="container-fluid container-90percent">
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-12">
-<<<<<<< HEAD
-      <div class="jumbotron jumbotron-padding">
-        @if ($notes[0]->is_complete == 0)
-          <h1 class="h1-color">Notes List</h1>
-        @else
-          <h1 class="h1-color">Complete List.</h1>
-=======
+
       <div class="jumbotron jumbotron-style">
         @if (count($notes) > 0 && $notes[0]->is_complete == 1)
           <h1 class="h1-color">Complete List</h1>
         @else
           <h1 class="h1-color">Notes List</h1>
->>>>>>> c2a4b3c0848b6825f58d66ef2250ad176736b0d0
+
         @endif
       </div>
       <div class="row">

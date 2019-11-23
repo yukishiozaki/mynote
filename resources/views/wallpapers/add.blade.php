@@ -12,11 +12,11 @@
         <div class="card card-new-wallpaper">
           <div class="card-header">wallpaper</div>
           <div class="card-body">
-            <form method="POST" action="{{ route('wallpaper.create') }}">
+            <form method="POST" action="{{ route('wallpaper.create') }}" enctype="multipart/form-data">
               @csrf
               <div class="form-group">
                 <label for="wallpaper_name">name</label>
-                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" autocomplete="off" />
+                <input name="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" autocomplete="off" />
 
 
                 <label for="wallpaper_image">image</label>
