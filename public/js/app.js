@@ -1746,8 +1746,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     postMemo: function postMemo(event) {
-      console.log(this.contents);
-      var contents = event.target.value.replace(/\r|\n|\r\n/g, ' ');
       var memo = {
         'id': this.note_id,
         'contents': event.target.value
