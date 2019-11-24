@@ -113,6 +113,6 @@ return [
         'password' => 'パスワード',
         'contents' => '内容',
         'color_id' => '付箋の色',
-        'name' => '色'
+        'name' => 'Name'
     ],
 ];

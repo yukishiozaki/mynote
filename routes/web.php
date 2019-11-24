@@ -41,6 +41,9 @@ Route::middleware(['auth'])->group(function() {
     Route::get('wallpapers/add', 'WallpapersController@add')->name('wallpaper.add');
     Route::post('wallpapers/create', 'wallpapersController@create')->name('wallpaper.create');
 
+    Route::get('users/edit', 'UsersController@edit')->name('users.edit');
+    Route::post('users/edit', 'UsersController@update')->name('users.update');
+
 });
 
 Route::get('stores/index', 'StoreController@index')->name('store.list');

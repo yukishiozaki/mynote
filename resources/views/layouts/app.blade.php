@@ -50,7 +50,7 @@
                             </li>
                             <li class="nav-item">
                                 @if (Route::has('register'))
-                                    <a class="nav-link text-right" href="{{ route('register') }}">REGISTER</a>
+                                    <a class="nav-link text-right" href="{{ route('register') }}">SIGN UP</a>
                                 @endif
                             </li>
                         @else
@@ -73,6 +73,11 @@
                             <li class="nav-item">
                                 <a class="nav-link text-right" href="{{ route('notes.list') }}">
                                     Notes list
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-right" href="{{ route('users.edit') }}">
+                                    Profile edit
                                 </a>
                             </li>
                         @endguest

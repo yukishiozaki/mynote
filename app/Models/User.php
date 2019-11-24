@@ -47,4 +47,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+
+    public static $rules = array(
+        'name' => 'required',
+      );
 }
