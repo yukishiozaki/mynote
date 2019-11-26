@@ -13,11 +13,12 @@ class WallpapersController extends Controller
     {
         $wallpaper = new Wallpaper;
         $form = $request->all();
-
+        
         if ($form['image']) {
 
 
           $path = $request->file('image')->store('public/image');
+
           $wallpaper->image_path = basename($path);
         } else {
           $wallpaper->image_path = null;

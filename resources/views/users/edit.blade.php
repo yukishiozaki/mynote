@@ -22,6 +22,13 @@
                             <input type="text" class="form-control" name="name" value="{{ $user_form->name }}">
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label text-md-right">Wallpaper</label>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
                             <input type="hidden" name="id" value="{{ $user_form->id }}">
