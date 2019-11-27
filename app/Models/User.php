@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'wallpaper_id',
     ];
 
     /**
@@ -51,4 +51,9 @@ class User extends Authenticatable
     public static $rules = array(
         'name' => 'required',
       );
+
+    public function wallpaper()
+    {
+        return $this->belongsTo(Wallpaper::class);
+    }
 }

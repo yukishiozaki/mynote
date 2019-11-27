@@ -13,10 +13,10 @@ class WallpapersController extends Controller
     {
         $wallpaper = new Wallpaper;
         $form = $request->all();
-        
+
         if ($form['image']) {
 
-
+          dd($form);
           $path = $request->file('image')->store('public/image');
 
           $wallpaper->image_path = basename($path);
@@ -35,4 +35,5 @@ class WallpapersController extends Controller
 
         return redirect('/notes/index');
     }
+
 }

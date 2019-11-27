@@ -9,13 +9,21 @@ class UsersController extends Controller
 
   public function edit(Request $request)
   {
+
+
+
       $user = Auth::user();
-      //dd($users);
+      //dd($user);
 
       if (empty($user)) {
         abort(404);
       }
-      return view('users.edit', ['user_form' => $user]);
+
+      $wallpapers = Wallpaper::all();
+
+      //dd($user->wallpaper);
+
+      return view('users.edit', ['user_form' => $user, 'wallpapers' => $wallpapers]);
   }
 
   public function update(Request $request)
@@ -34,6 +42,7 @@ class UsersController extends Controller
 
       // 該当するデータを上書きして保存する
       $user->fill($user_form)->save();
+
 
       return redirect('notes/index');
   }

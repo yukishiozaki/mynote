@@ -24,9 +24,20 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">Wallpaper</label>
+                        <label for="wallpaper" class="col-md-4 col-form-label text-md-right">Wallpaper</label>
                         <div class="col-md-6">
-                            
+                            @foreach($wallpapers as $wallpaper)
+                                <img src="{{ asset('storage/image/' . $wallpaper->image_path) }}">
+                                <!-- <img src="public/image/MAVJiQ3RcYV6HbtWjFUg4b71GqwtV6QKQMv489Yy.jpeg"> -->
+
+                                @if($user_form->wallpaper_id == $wallpaper->id)
+                                    <label><input type="radio" name="wallpaper_id" value='{{ $wallpaper->id}}' checked>{{ $wallpaper->name }}</label>
+                                @else
+                                    <label><input type="radio" name="wallpaper_id" value='{{ $wallpaper->id}}'>{{ $wallpaper->name }}</label>
+                                @endif
+
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="form-group row mb-0">
