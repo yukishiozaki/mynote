@@ -9,9 +9,6 @@ class UsersController extends Controller
 
   public function edit(Request $request)
   {
-
-
-
       $user = Auth::user();
       //dd($user);
 
