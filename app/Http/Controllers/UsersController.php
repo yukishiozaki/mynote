@@ -35,7 +35,7 @@ class UsersController extends Controller
 
       //$user_form = $request->input('users_name');
       $user_form = $request->all();
-      dd($user_form);
+      //dd($user_form);
       unset($user_form['_token']);
 
       // 該当するデータを上書きして保存する

@@ -22,8 +22,8 @@
                   <memo-area-component note_id={{ $note->id }}></memo-area-component>
                 </form>
                 <div>
-                  <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("君は本当に削除するつもりかい？");' >
-                    <div class="actionButton doneEntry nodrag" title="はがす?">
+                  <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
+                    <div class="actionButton doneEntry nodrag" title="Delete?">
                     </div>
                   </a>
                 </div>
