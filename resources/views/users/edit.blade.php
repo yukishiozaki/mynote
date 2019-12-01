@@ -27,7 +27,7 @@
                         <label for="wallpaper" class="col-md-4 col-form-label text-md-right">Wallpaper</label>
                         <div class="col-md-6">
                             @foreach($wallpapers as $wallpaper)
-                                <img src="{{ asset('storage/image/' . $wallpaper->image_path) }}">
+                                <img src="{{ asset('storage/image/' . $wallpaper->image_path) }}" class="img-fluid">
                                 <!-- <img src="public/image/MAVJiQ3RcYV6HbtWjFUg4b71GqwtV6QKQMv489Yy.jpeg"> -->
 
                                 @if($user_form->wallpaper_id == $wallpaper->id)

@@ -19,9 +19,7 @@ class UsersController extends Controller
       $wallpapers = Wallpaper::all();
       //dd($wallpapers);
       //dd($user->wallpaper);
-
       return view('users.edit', ['user_form' => $user, 'wallpapers' => $wallpapers]);
-
   }
 
   public function update(Request $request)
@@ -29,20 +27,24 @@ class UsersController extends Controller
       // Validationをかける
       //$this->validate($request, User::$rules);
       // User Modelからデータを取得する
-      $user = User::find($request->id);
+      $user = Auth::user();
+      //$user = User::find($request->id);
       //dd($user);
       // 送信されてきたフォームデータを格納する
 
       //$user_form = $request->input('users_name');
       $user_form = $request->all();
-      //dd($user_form);
+
+
       unset($user_form['_token']);
 
       // 該当するデータを上書きして保存する
       $user->fill($user_form)->save();
 
 
-      return redirect('notes/index');
+
+
+      return redirect('users/edit');
   }
 
 }
