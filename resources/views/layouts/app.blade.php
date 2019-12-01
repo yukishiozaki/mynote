@@ -86,9 +86,22 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+
+        @if (request()->path() == "notes/index")
+
+            <main class="py-4" style="background-image:">
+              <p>
+                {{ Auth::user()->wallpaper->image_path }}
+              </p>
+              @yield('content')
+            </main>
+
+        @else
+            <main class="py-4">
+              @yield('content')
+            </main>
+        @endif
+        </div>
+
 </body>
 </html>
