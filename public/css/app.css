@@ -10744,3 +10744,8 @@ a.text-dark:focus {
   display: block;
 }
 
+.background-image {
+  background: Blue;
+  background-size: cover;
+}
+

@@ -89,7 +89,7 @@
 
         @if (request()->path() == "notes/index")
 
-            <main class="py-4" style="background-image:">
+            <main class="py-4 background-image">
               <p>
                 {{ Auth::user()->wallpaper->image_path }}
               </p>
