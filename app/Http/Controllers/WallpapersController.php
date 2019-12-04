@@ -16,7 +16,7 @@ class WallpapersController extends Controller
 
         if ($form['image']) {
 
-          dd($form);
+          
           $path = $request->file('image')->store('public/image');
 
           $wallpaper->image_path = basename($path);
