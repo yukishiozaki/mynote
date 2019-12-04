@@ -89,10 +89,7 @@
 
         @if (request()->path() == "notes/index")
 
-            <main class="py-4 background-image">
-              <p>
-                {{ Auth::user()->wallpaper->image_path }}
-              </p>
+            <main class="py-4" style="background:url(http://127.0.0.1:8000/storage/image/{{Auth::user()->wallpaper->image_path}})">
               @yield('content')
             </main>
 
