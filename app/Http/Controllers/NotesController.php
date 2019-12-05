@@ -46,7 +46,7 @@ class NotesController extends Controller
 
 
 
-      session()->flash('status', '作成しました！');
+      session()->flash('status', 'Created！');
 
       return redirect('/notes/add');
 

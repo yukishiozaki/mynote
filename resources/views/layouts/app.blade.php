@@ -76,6 +76,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link text-right" href="{{ route('notes.completelist') }}">
+                                    Complete list
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-right" href="{{ route('users.edit') }}">
                                     Profile edit
                                 </a>
