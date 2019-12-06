@@ -91,8 +91,12 @@
 }
 
 .card-border {
-  border: 5px solid #f8fafc;
+  border: 0px solid #f8fafc;
   border-radius: 1.1rem;
+}
+
+.card + .card-border {
+  margin: 0 0 0 8px;
 }
 
 .h1-color {
