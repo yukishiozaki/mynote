@@ -10,7 +10,6 @@
           <h1 class="h1-color">Complete List</h1>
         @else
           <h1 class="h1-color">Notes List</h1>
-
         @endif
       </div>
       <div class="row">
