@@ -56,7 +56,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     LOGIN
                                 </button>
-
                             </div>
                         </div>
                     </form>
