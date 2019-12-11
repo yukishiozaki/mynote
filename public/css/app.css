@@ -10732,8 +10732,8 @@ a.text-dark:focus {
   border-radius: 1.1rem;
 }
 
-.card + .card-border {
-  margin: 0 0 0 8px;
+.card + .card {
+  margin: 10px;
 }
 
 .h1-color {
@@ -10746,5 +10746,10 @@ a.text-dark:focus {
 
 .py-4 {
   display: block;
+}
+
+.cardbody-padding {
+  padding-right: 6px;
+  padding-left: 6px;
 }
 

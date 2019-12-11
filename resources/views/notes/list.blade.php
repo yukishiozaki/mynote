@@ -14,8 +14,9 @@
       </div>
       <div class="row">
           @foreach ($notes as $note)
+          <div class="col-lg-3 pb-3 cardbody-padding">
             <textarea id="note-{{$note->id}}" style="display: none;">{{ $note->contents }}</textarea>
-            <div class="card card-border col-6 col-lg-3 fusen background-color-{{ $note->color->name }} ">
+            <div class="card card-border fusen background-color-{{ $note->color->name }} ">
               <div class="cardbody-no-padding">
                 <form>
                   <memo-area-component note_id={{ $note->id }}></memo-area-component>
@@ -28,6 +29,7 @@
                 </div>
               </div>
             </div>
+          </div>
           @endforeach
       </div>
     </div>
