@@ -13,6 +13,7 @@
         @endif
       </div>
       <div class="row">
+        
           @foreach ($notes as $note)
           <div class="col-lg-3 pb-3 cardbody-padding">
             <textarea id="note-{{$note->id}}" style="display: none;">{{ $note->contents }}</textarea>
