@@ -100,5 +100,13 @@ class NotesController extends Controller
       return redirect('notes/index');
   }
 
+  public function delete(Request $request)
+  {
+      $note = Note::find($request->id);
+      $note->is_complete = 2;
+      $note->save();
+
+      return redirect('notes/completelist');
+  }
 
 }
