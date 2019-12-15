@@ -25,33 +25,48 @@
 
                 <div>
                   @if ($note->is_complete == 0)
+                  <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
+                    @CSRF
+                    <input type="hidden"　name="id" value="{{ $note->id }}"/>
+                    <div class="actionButton doneEntry nodrag" title="Delete?" type="submit">
+                    </div>
+                    <button type="submit"></button>
                     <!-- <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
                       <div class="actionButton doneEntry nodrag" title="Delete?">
                       </div>
                     </a> -->
-                    <form method="post" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
-                      <input type="hidden" id="name" name="name"/>
+                  </form>
+                    <!-- <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
+                      {{ csrf_field() }}
+                      <input id="name" name="name">
                         <div class="actionButton doneEntry nodrag" title="Delete?">
                         </div>
                       <button type="submit" class="btn btn-primary"></button>
-                    </form>
+                    </form> -->
 
                   @else
-                    <!-- <a href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
-                      <div class="actionButton doneEntry nodrag" title="Delete?">
+                  <form method="POST" action="{{ route('notes.delete')}}" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{{ $note->id }}"/>
+                    <div class="actionButton doneEntry nodrag" title="Delete?" type="submit">
+                    </div>
+                    <button type="submit"></button>
+                    <!-- <a method="post" href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
+                      <div class="actionButton doneEntry nodrag" title="Delete?" type="submit">
                       </div>
                     </a> -->
-                    <form method="post" action="{{ route('notes.delete') }}" enctype="multipart/form-data">
-                      <input type="hidden" id="name" name="name"/>
+
+                    <!-- <form method="POST" action="{{ route('notes.delete') }}" enctype="multipart/form-data">
+                      {{ csrf_field() }}
+                      <input id="name" name="name">
                         <div class="actionButton doneEntry nodrag" title="Delete?">
                         </div>
                       <button type="submit" class="btn btn-primary"></button>
-                    </form>
+                    </form> -->
                       <!-- <a href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
                         <div class="actionButton doneEntry nodrag" title="Delete?">
                         </div>
                       </a> -->
-
+                  </form>
                   @endif
                 </div>
 
