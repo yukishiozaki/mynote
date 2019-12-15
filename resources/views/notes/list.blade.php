@@ -31,11 +31,15 @@
                     <div class="actionButton doneEntry nodrag" title="Delete?" type="submit">
                     </div>
                     <button type="submit"></button>
-                    <!-- <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
+                  </form>
+
+                    <!-- <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to move this note to "Complete List"？");' >
                       <div class="actionButton doneEntry nodrag" title="Delete?">
                       </div>
-                    </a> -->
-                  </form>
+                    </a>
+                   -->
+
+
                     <!-- <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <input id="name" name="name">
@@ -45,13 +49,22 @@
                     </form> -->
 
                   @else
+                  <!-- <form method="POST">
+                    <a href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
+                      <div class="actionButton doneEntry nodrag" title="Delete?">
+                      </div>
+                    </a>
+                  </form> -->
+
                   <form method="POST" action="{{ route('notes.delete')}}" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="{{ $note->id }}"/>
                     <div class="actionButton doneEntry nodrag" title="Delete?" type="submit">
                     </div>
                     <button type="submit"></button>
-                    <!-- <a method="post" href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
-                      <div class="actionButton doneEntry nodrag" title="Delete?" type="submit">
+                  </form>
+
+                    <!-- <a href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
+                      <div class="actionButton doneEntry nodrag" title="Delete?">
                       </div>
                     </a> -->
 
@@ -62,14 +75,10 @@
                         </div>
                       <button type="submit" class="btn btn-primary"></button>
                     </form> -->
-                      <!-- <a href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
-                        <div class="actionButton doneEntry nodrag" title="Delete?">
-                        </div>
-                      </a> -->
-                  </form>
+
+
                   @endif
                 </div>
-
               </div>
             </div>
           </div>
