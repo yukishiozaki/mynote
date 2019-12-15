@@ -30,11 +30,11 @@ Route::middleware(['auth'])->group(function() {
     Route::post('categories/create', 'CategoriesController@create')->name('category.create');
     Route::get('notes/add', 'NotesController@add')->name('notes.add');
 
-    //Route::get('notes/complete', 'NotesController@complete')->name('notes.complete');
+    Route::get('notes/complete', 'NotesController@complete')->name('notes.complete');
     Route::post('notes/complete', 'NotesController@complete')->name('notes.complete');
     Route::get('notes/edit', 'NotesController@edit')->name('notes.edit');
     Route::post('notes/edit', 'NotesController@update')->name('notes.update');
-    //Route::get('notes/delete', 'NotesController@delete')->name('notes.delete');
+    Route::get('notes/delete', 'NotesController@delete')->name('notes.delete');
     Route::post('notes/delete', 'NotesController@delete')->name('notes.delete');
     Route::get('colors/add', 'ColorsController@add')->name('color.add');
     Route::post('colors/create', 'ColorsController@create')->name('color.create');
