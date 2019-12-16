@@ -94,7 +94,6 @@ class NotesController extends Controller
   public function complete(Request $request)
   {
       $note = Note::find($request->id);
-      $note = new Note;
       $note->is_complete = 1;
       $note->save();
 
