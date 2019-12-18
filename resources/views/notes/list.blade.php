@@ -6,10 +6,13 @@
     <div class="col-12">
 
       <div class="jumbotron jumbotron-style">
+
         @if (count($notes) > 0 && $notes[0]->is_complete == 1)
           <h1 class="h1-color">Complete List</h1>
-        @else
+        @elseif (count($notes) > 0 && $notes[0]->is_complete == 0)
           <h1 class="h1-color">Notes List</h1>
+        @else
+          <div class="h1-color">no list..</div>
         @endif
       </div>
       <div class="row">

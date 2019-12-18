@@ -23,11 +23,11 @@ Route::middleware(['auth'])->group(function() {
             'index', 'store', 'update'
         ]
     ]);
-    Route::post('tasks/search', 'TaskController@search')->name('tasks.search');;
-    Route::get('stores/add', 'StoreController@add')->name('store.add');
-    Route::post('stores/create', 'StoreController@create')->name('store.create');
-    Route::get('categories/add', 'CategoriesController@add')->name('category.add');
-    Route::post('categories/create', 'CategoriesController@create')->name('category.create');
+    // Route::post('tasks/search', 'TaskController@search')->name('tasks.search');;
+    // Route::get('stores/add', 'StoreController@add')->name('store.add');
+    // Route::post('stores/create', 'StoreController@create')->name('store.create');
+    // Route::get('categories/add', 'CategoriesController@add')->name('category.add');
+    // Route::post('categories/create', 'CategoriesController@create')->name('category.create');
     Route::get('notes/add', 'NotesController@add')->name('notes.add');
 
     //Route::get('notes/complete', 'NotesController@complete')->name('notes.complete');
@@ -49,5 +49,5 @@ Route::middleware(['auth'])->group(function() {
     Route::post('notes/create', 'NotesController@create')->name('notes.create');
 
 });
-Route::get('stores/index', 'StoreController@index')->name('store.list');
-Route::get('stores/show', 'StoreController@show')->name('store.show');
+// Route::get('stores/index', 'StoreController@index')->name('store.list');
+// Route::get('stores/show', 'StoreController@show')->name('store.show');
