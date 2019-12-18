@@ -42,11 +42,12 @@ Route::middleware(['auth'])->group(function() {
     Route::post('wallpapers/create', 'wallpapersController@create')->name('wallpaper.create');
     Route::get('users/edit', 'UsersController@edit')->name('users.edit');
     Route::post('users/edit', 'UsersController@update')->name('users.update');
+
+    Route::get('notes/index', 'NotesController@index')->name('notes.list');
+
+    Route::get('notes/completelist', 'NotesController@completeList')->name('notes.completelist');
+    Route::post('notes/create', 'NotesController@create')->name('notes.create');
+
 });
 Route::get('stores/index', 'StoreController@index')->name('store.list');
 Route::get('stores/show', 'StoreController@show')->name('store.show');
-Route::get('notes/index', 'NotesController@index')->name('notes.list');
-
-//Route::get('notes/completelist', 'NotesController@completeList')->name('notes.completelist');
-Route::post('notes/completelist', 'NotesController@completeList')->name('notes.completelist');
-Route::post('notes/create', 'NotesController@create')->name('notes.create');
