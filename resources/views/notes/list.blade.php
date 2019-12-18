@@ -28,9 +28,8 @@
                   <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden"　name="id" value="{{ $note->id }}"/>
-                    <div class="actionButton doneEntry nodrag" title="Delete?" type="submit">
-                    </div>
-                    <button type="submit"></button>
+                    <button type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?">
+                    </button>
                   </form>
 
                     <!-- <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to move this note to "Complete List"？");' >
@@ -57,10 +56,10 @@
                   </form> -->
 
                   <form method="POST" action="{{ route('notes.delete')}}" enctype="multipart/form-data">
+                    @CSRF
                     <input type="hidden" name="id" value="{{ $note->id }}"/>
-                    <div class="actionButton doneEntry nodrag" title="Delete?" type="submit">
-                    </div>
-                    <button type="submit"></button>
+                    <button type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?">
+                    </button>
                   </form>
 
                     <!-- <a href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
