@@ -41,8 +41,7 @@ class UsersController extends Controller
       // 該当するデータを上書きして保存する
       $user->fill($user_form)->save();
 
-
-
+      session()->flash('status', 'Updated！');      
 
       return redirect('users/edit');
   }

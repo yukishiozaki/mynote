@@ -39,15 +39,26 @@
                             @endforeach
                         </div>
                     </div>
+
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
                             <input type="hidden" name="id" value="{{ $user_form->id }}">
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-primary">
-                                UPDATE
-                            </button>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary">
+                                    UPDATE
+                                </button>
+                            </div>
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                         </div>
                     </div>
+
+
+
                     </form>
                 </div>
             </div>
