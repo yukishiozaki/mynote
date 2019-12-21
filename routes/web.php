@@ -18,11 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth'])->group(function() {
-    Route::resource('tasks', 'TaskController', [
-        'only' => [
-            'index', 'store', 'update'
-        ]
-    ]);
+    // Route::resource('tasks', 'TaskController', [
+    //     'only' => [
+    //         'index', 'store', 'update'
+    //     ]
+    // ]);
     // Route::post('tasks/search', 'TaskController@search')->name('tasks.search');;
     // Route::get('stores/add', 'StoreController@add')->name('store.add');
     // Route::post('stores/create', 'StoreController@create')->name('store.create');
