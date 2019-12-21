@@ -32,7 +32,6 @@ Route::middleware(['auth'])->group(function() {
 
     //Route::get('notes/complete', 'NotesController@complete')->name('notes.complete');
     Route::post('notes/complete', 'NotesController@complete')->name('notes.complete');
-    Route::get('notes/edit', 'NotesController@edit')->name('notes.edit');
     Route::post('notes/edit', 'NotesController@update')->name('notes.update');
     //Route::get('notes/delete', 'NotesController@delete')->name('notes.delete');
     Route::post('notes/delete', 'NotesController@delete')->name('notes.delete');
