@@ -22,64 +22,26 @@
             <textarea id="note-{{$note->id}}" style="display: none;">{{ $note->contents }}</textarea>
             <div class="card card-border fusen background-color-{{ $note->color->name }} ">
               <div class="cardbody-no-padding">
-                <form>
-                  <memo-area-component note_id={{ $note->id }}></memo-area-component>
-                </form>
-
                 <div>
-                  @if ($note->is_complete == 0)
+                @if ($note->is_complete == 0)
+                  <form>
+                    <memo-area-component note_id={{ $note->id }}></memo-area-component>
+                  </form>
                   <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden"　name="id" value="{{ $note->id }}"/>
                     <button onclick="return confirm('Move this note to Complete List？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
                     </button>
                   </form>
-
-                    <!-- <a href="{{ action('NotesController@complete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to move this note to "Complete List"？");' >
-                      <div class="actionButton doneEntry nodrag" title="Delete?">
-                      </div>
-                    </a>
-                   -->
-
-
-                    <!-- <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
-                      {{ csrf_field() }}
-                      <input id="name" name="name">
-                        <div class="actionButton doneEntry nodrag" title="Delete?">
-                        </div>
-                      <button type="submit" class="btn btn-primary"></button>
-                    </form> -->
-
-                  @else
-                  <!-- <form method="POST">
-                    <a href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
-                      <div class="actionButton doneEntry nodrag" title="Delete?">
-                      </div>
-                    </a>
-                  </form> -->
-
+                @else
+                  <textarea readonly class="memo-area" rows="5">{{ $note->contents }}</textarea>
                   <form method="POST" action="{{ route('notes.delete')}}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden" name="id" value="{{ $note->id }}"/>
                     <button onclick="return confirm('Delete this note completely？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
                     </button>
                   </form>
-
-                    <!-- <a href="{{ action('NotesController@delete', ['id' => $note->id]) }}" tabindex="-1" onclick='return confirm("Are you sure to delete this note？");' >
-                      <div class="actionButton doneEntry nodrag" title="Delete?">
-                      </div>
-                    </a> -->
-
-                    <!-- <form method="POST" action="{{ route('notes.delete') }}" enctype="multipart/form-data">
-                      {{ csrf_field() }}
-                      <input id="name" name="name">
-                        <div class="actionButton doneEntry nodrag" title="Delete?">
-                        </div>
-                      <button type="submit" class="btn btn-primary"></button>
-                    </form> -->
-
-
-                  @endif
+                @endif
                 </div>
               </div>
             </div>
