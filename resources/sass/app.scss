@@ -34,6 +34,7 @@
   resize: none;
   background-color: transparent;
   padding: 0.7em;
+  outline: none;
 }
 
 .cardbody-no-padding {
@@ -43,41 +44,44 @@
 }
 
 .doneEntry {
-    background-image: url(/image/action/normal.png);
-    background-position: -80px 0;
+  background-image: url(/image/action/normal.png);
+  background-position: -80px 0;
+  background-color: transparent;
+  border-color: transparent;
+  background-repeat: no-repeat;
 }
 .actionButton {
-    cursor: pointer;
-    width: 20px;
-    height: 14px;
-    float: right;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 17px;
+  float: right;
+  position: absolute;
+  bottom: 4px;
+  right: 7px;
 }
 
 .background-color-blue {
-    background-color: #A9E2F3;
+  background-color: #A9E2F3;
 }
 
 .background-color-red {
-    background-color: #F6CEE3;
+  background-color: #F6CEE3;
 }
 
 .background-color-yellow {
-    background-color: #F3F781;
+  background-color: #F3F781;
 }
 
 .background-color-green {
-    background-color: #81F7BE;
+  background-color: #81F7BE;
 }
 
 .background-color-white {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 .background-color-purple {
-    background-color: #E3CEF6;
+  background-color: #E3CEF6;
 }
 
 .container-90percent {
