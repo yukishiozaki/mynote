@@ -60,10 +60,10 @@
                               </li>
                           @else
                               <li class="nav-item">
-                                <a class="nav-link text-right" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+                                  <a class="nav-link text-right" href="{{ route('logout') }}"
+                                      onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    Log out
+                                      Log out
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -95,16 +95,9 @@
                   </div>
               </div>
           </nav>
-
-          @if (request()->path() == "notes/index")
-              <main class="py-4">
-                @yield('content')
-              </main>
-          @else
-              <main class="py-4">
-                @yield('content')
-              </main>
-          @endif
-          </div>
+          <main class="py-4">
+            @yield('content')
+          </main>
+      </div>
   </body>
 </html>
