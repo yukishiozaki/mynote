@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('colors/add', 'ColorsController@add')->name('color.add');
     Route::post('colors/create', 'ColorsController@create')->name('color.create');
     Route::get('wallpapers/add', 'WallpapersController@add')->name('wallpaper.add');
-    Route::post('wallpapers/create', 'wallpapersController@create')->name('wallpaper.create');
+    Route::post('wallpapers/create', 'WallpapersController@create')->name('wallpaper.create');
     Route::get('users/edit', 'UsersController@edit')->name('users.edit');
     Route::post('users/edit', 'UsersController@update')->name('users.update');
     Route::get('notes/index', 'NotesController@index')->name('notes.list');
