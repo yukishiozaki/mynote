@@ -37,5 +37,4 @@ Route::middleware(['auth'])->group(function() {
     Route::get('notes/index', 'NotesController@index')->name('notes.list');
     Route::get('notes/completelist', 'NotesController@completeList')->name('notes.completelist');
     Route::post('notes/create', 'NotesController@create')->name('notes.create');
-
 });
