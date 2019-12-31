@@ -10746,6 +10746,7 @@ a.text-dark:focus {
 
 .h1-color {
   color: rgba(0, 0, 0, 0.5);
+  font-size: 1.8rem;
 }
 
 .fusen {
