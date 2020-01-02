@@ -30,7 +30,7 @@
                   <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden"　name="id" value="{{ $note->id }}"/>
-                    <button onclick="return confirm('Move this note to Complete List？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
+                    <button onclick="return confirm('Complete Listへ移動させますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
                     </button>
                   </form>
                 @else
@@ -38,7 +38,7 @@
                   <form method="POST" action="{{ route('notes.delete')}}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden" name="id" value="{{ $note->id }}"/>
-                    <button onclick="return confirm('Delete this note completely？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
+                    <button onclick="return confirm('完全に削除しますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
                     </button>
                   </form>
                 @endif
