@@ -20,5 +20,6 @@ class ColorsController extends Controller
         $color->save();
 
         return redirect('/notes/index');
+        
     }
 }
