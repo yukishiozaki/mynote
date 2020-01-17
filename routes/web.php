@@ -18,12 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth'])->group(function() {
-    // Route::resource('tasks', 'TaskController', [
-    //     'only' => [
-    //         'index', 'store', 'update'
-    //     ]
-    // ]);
-
+  
     Route::get('notes/add', 'NotesController@add')->name('notes.add');
     Route::post('notes/complete', 'NotesController@complete')->name('notes.complete');
     Route::post('notes/edit', 'NotesController@update')->name('notes.update');
