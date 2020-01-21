@@ -4,7 +4,6 @@
 <div class="container-fluid container-90percent">
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-12">
-
       <div class="jumbotron jumbotron-style">
 
         @if (count($notes) > 0 && $notes[0]->is_complete == 1)
