@@ -29,15 +29,19 @@
                   <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden"　name="id" value="{{ $note->id }}"/>
-                    <button onclick="return confirm('Complete Listへ移動させますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
+                    <button onclick="toastr.warning('Complete Listへ移動させますか？');" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
+                    <!-- <button onclick="return confirm('Complete Listへ移動させますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
+
                     </button>
+
                   </form>
                 @else
                   <textarea readonly class="memo-area" rows="5">{{ $note->contents }}</textarea>
                   <form method="POST" action="{{ route('notes.delete')}}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden" name="id" value="{{ $note->id }}"/>
-                    <button onclick="return confirm('完全に削除しますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
+                    <button onclick="toastr.warning('完全に削除しますか？');" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
+                    <!-- <button onclick="return confirm('完全に削除しますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
                     </button>
                   </form>
                 @endif
@@ -49,4 +53,12 @@
     </div>
   </div>
 </div>
+
+<script>
+    @if (session('flash_message'))
+        $(function () {
+                toastr.success('{{ session('flash_message') }}');
+        });
+    @endif
+</script>
 @endsection
