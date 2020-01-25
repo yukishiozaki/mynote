@@ -1,34 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-<script type="text/javascript">
-Command: toastr["info"]("Complete Listへ移動させますか？<br /><br /><button type="button" class="btn clear">Yes</button>", "確認")
-
-toastr.options = {
-  "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-top-center",
-  "preventDuplicates": false,
-  "onclick": null,
-  "showDuration": "300",
-  "hideDuration": "1000",
-  "timeOut": 0,
-  "extendedTimeOut": 0,
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut",
-  "tapToDismiss": false
-}
- </script>
-
-
 <div class="container-fluid container-90percent">
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-12">
@@ -63,7 +35,7 @@ toastr.options = {
                       <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
                       <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
                       <script type="text/javascript">
-                      $(document).ready(function() {
+                      $('submit').ready(function() {
                         toastr.options.timeOut = 3000; // 3秒
                             toastr.options = {
                               "closeButton": true,
@@ -82,7 +54,7 @@ toastr.options = {
                               "hideMethod": "fadeOut"
                             }
                             Command: toastr["warning"]("Complete Listへ移動させますか？");
-                                $('#id').on.click(function() {
+                                $('submit').on.click(function() {
                                    toastr.success('onclick');
                                 });
                               });
