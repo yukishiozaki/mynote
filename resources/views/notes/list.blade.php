@@ -1,6 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script type="text/javascript">
+Command: toastr["info"]("Complete Listへ移動させますか？<br /><br /><button type="button" class="btn clear">Yes</button>", "確認")
+
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-center",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": 0,
+  "extendedTimeOut": 0,
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut",
+  "tapToDismiss": false
+}
+ </script>
+
+
 <div class="container-fluid container-90percent">
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-12">
@@ -29,10 +57,41 @@
                   <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden"　name="id" value="{{ $note->id }}"/>
-                    <button onclick="toastr.warning('Complete Listへ移動させますか？');" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
+                    <button onclick="toastr.warning('Complete Listへ移動させますか？');" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1">
+
+                      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+                      <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+                      <script type="text/javascript">
+                      $(document).ready(function() {
+                        toastr.options.timeOut = 3000; // 3秒
+                            toastr.options = {
+                              "closeButton": true,
+                              "debug": false,
+                              "newestOnTop": false,
+                              "progressBar": false,
+                              "positionClass": "toast-top-center",
+                              "preventDuplicates": false,
+                              "showDuration": "300",
+                              "hideDuration": "1000",
+                              "timeOut": "5000",
+                              "extendedTimeOut": "1000",
+                              "showEasing": "swing",
+                              "hideEasing": "linear",
+                              "showMethod": "fadeIn",
+                              "hideMethod": "fadeOut"
+                            }
+                            Command: toastr["warning"]("Complete Listへ移動させますか？");
+                                $('#id').on.click(function() {
+                                   toastr.success('onclick');
+                                });
+                              });
+                    </script>
+                  </button>
+                    <!-- <button onclick="toastr.info" type="submit" type="hidden" type="text/javascript" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
                     <!-- <button onclick="return confirm('Complete Listへ移動させますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
 
-                    </button>
+
 
                   </form>
                 @else
@@ -40,7 +99,7 @@
                   <form method="POST" action="{{ route('notes.delete')}}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden" name="id" value="{{ $note->id }}"/>
-                    <button onclick="toastr.warning('完全に削除しますか？');" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
+                    <button onclick="toastr.warning('完全に削除しますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
                     <!-- <button onclick="return confirm('完全に削除しますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
                     </button>
                   </form>
@@ -54,11 +113,12 @@
   </div>
 </div>
 
-<script>
+
+<!-- <script>
     @if (session('flash_message'))
         $(function () {
                 toastr.success('{{ session('flash_message') }}');
         });
     @endif
-</script>
+</script> -->
 @endsection

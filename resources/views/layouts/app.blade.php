@@ -27,7 +27,8 @@
       <!-- jQuery と toastr.js の読み込み -->
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
-      <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
+      </script>
 
   </head>
 
@@ -105,5 +106,6 @@
             @yield('content')
           </main>
       </div>
+
   </body>
 </html>
