@@ -29,9 +29,12 @@
                   <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden"　name="id" value="{{ $note->id }}"/>
-                    <button onclick="toastr.warning('Complete Listへ移動させますか？');" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1">
+                    <button type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1">
 
-                      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+
+
+                      <!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
                       <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
                       <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
                       <script type="text/javascript">
@@ -58,7 +61,7 @@
                                    toastr.success('onclick');
                                 });
                               });
-                    </script>
+                    </script> -->
                   </button>
                     <!-- <button onclick="toastr.info" type="submit" type="hidden" type="text/javascript" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
                     <!-- <button onclick="return confirm('Complete Listへ移動させますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->

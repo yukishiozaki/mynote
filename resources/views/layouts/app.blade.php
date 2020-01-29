@@ -30,6 +30,14 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
       </script>
 
+      <script>
+          @if (session('flash_message'))
+              $(function () {
+              toastr.success('{{ session('flash_message') }}');
+          });
+          @endif
+      </script>
+
   </head>
 
   @if (request()->path() == "notes/index")
