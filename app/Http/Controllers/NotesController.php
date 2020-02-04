@@ -94,6 +94,7 @@ class NotesController extends Controller
       $note->is_complete = 1;
       $note->save();
 
+      // return redirect('notes/index')->with('flash_message', 'Complete Listへ移動させますか？');
       return redirect('notes/index');
   }
 
