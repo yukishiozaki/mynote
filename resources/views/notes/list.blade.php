@@ -29,54 +29,15 @@
                   <form method="POST" action="{{ route('notes.complete') }}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden"　name="id" value="{{ $note->id }}"/>
-                    <button type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1">
-
-
-
-
-                      <!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-                      <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
-                      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-                      <script type="text/javascript">
-                      $('submit').ready(function() {
-                        toastr.options.timeOut = 3000; // 3秒
-                            toastr.options = {
-                              "closeButton": true,
-                              "debug": false,
-                              "newestOnTop": false,
-                              "progressBar": false,
-                              "positionClass": "toast-top-center",
-                              "preventDuplicates": false,
-                              "showDuration": "300",
-                              "hideDuration": "1000",
-                              "timeOut": "5000",
-                              "extendedTimeOut": "1000",
-                              "showEasing": "swing",
-                              "hideEasing": "linear",
-                              "showMethod": "fadeIn",
-                              "hideMethod": "fadeOut"
-                            }
-                            Command: toastr["warning"]("Complete Listへ移動させますか？");
-                                $('submit').on.click(function() {
-                                   toastr.success('onclick');
-                                });
-                              });
-                    </script> -->
-                  </button>
-                    <!-- <button onclick="toastr.info" type="submit" type="hidden" type="text/javascript" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
-                    <!-- <button onclick="return confirm('Complete Listへ移動させますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
-
-
-
+                    <button type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1"></button>
+                    <button onclick="return confirm('Complete Listへ移動させますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
                   </form>
                 @else
                   <textarea readonly class="memo-area" rows="5">{{ $note->contents }}</textarea>
                   <form method="POST" action="{{ route('notes.delete')}}" enctype="multipart/form-data">
                     @CSRF
                     <input type="hidden" name="id" value="{{ $note->id }}"/>
-                    <button onclick="toastr.warning('完全に削除しますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" >
-                    <!-- <button onclick="return confirm('完全に削除しますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" > -->
-                    </button>
+                    <button onclick="return confirm('完全に削除しますか？')" type="submit" type="hidden" class="actionButton doneEntry nodrag" title="Delete?" tabindex="-1" ></button>
                   </form>
                 @endif
                 </div>
