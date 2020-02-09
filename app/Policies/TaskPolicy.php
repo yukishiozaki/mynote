@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 namespace App\Policies;
 
@@ -21,4 +21,4 @@ class TaskPolicy
     {
         return $user->is($task->user);
     }
-}
+} -->
